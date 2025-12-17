@@ -38,7 +38,7 @@ function App() {
   const handleGetAllTask = async ()=>{
     try{
       const result = await getAllTask()
-      console.log(result);
+      // console.log(result);
     if (result.status == 200) {
       setTasks(result.data)
     }
