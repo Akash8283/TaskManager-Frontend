@@ -91,7 +91,7 @@ function App() {
             </li>
               ))
             :
-            <p className='text-center text-gray-500'>No Tasks Available</p>
+            <p className='text-center text-gray-400'>No Tasks Available</p>
             }
           </ul>
          </div>
