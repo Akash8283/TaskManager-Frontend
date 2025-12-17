@@ -18,7 +18,7 @@ function App() {
   const handleAddTask = async()=>{
     try{
       const result = await addTask(input)
-    console.log(result);
+    // console.log(result);
     if (result.status==200) {
       toast.success("Task added Successfully")
       setInput({title:""})
