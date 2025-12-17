@@ -70,24 +70,24 @@ function App() {
 
   return (
     <>
-      <div className='m-10 p-5 rounded-xl shadow-md bg-white'>
+      <div className='m-4 sm:m-10 p-4 sm:p-5 rounded-xl shadow-md bg-white'>
         <div className='text-center mt-5'>
-          <h1 className='text-5xl'>TASK MANAGER</h1>
+          <h1 className='text-3xl sm:text-5xl'>TASK MANAGER</h1>
         </div>
 
-        <div className='flex items-center justify-center gap-2'>
-          <input value={input.title} onChange={e=>setInput({...input,title:e.target.value})} className='border-2 my-2 rounded w-2xl p-2 text-center border-gray-400' type="text" />
-          <button onClick={handleAddTask} className='p-2 bg-green-700 text-white rounded cursor-pointer'>ADD TASK</button>
+        <div className='flex flex-col sm:flex-row items-center justify-center gap-2 mt-4'>
+          <input value={input.title} onChange={e=>setInput({...input,title:e.target.value})} className='border-2 rounded w-full sm:w-96 p-2 text-center border-gray-400' type="text" />
+          <button onClick={handleAddTask} className='w-full sm:w-auto p-2 bg-green-700 text-white rounded cursor-pointer'>ADD TASK</button>
         </div>
          
-          <div className='mt-6 mx-20'>
+          <div className='mt-6 mx-2 sm:mx-20'>
           <ul>
             {
               tasks?.length !=0?
               tasks?.map(task=>(
-                <li key={task._id} className='flex items-center justify-between border-white rounded bg-gray-400 p-4 my-4'>
-              <span className='text-white text-xl'>{task.title}</span>
-              <button onClick={()=>handleDeleteTask(task._id)} className='p-2 bg-red-700 text-white rounded cursor-pointer'>DELETE</button>
+                <li key={task._id} className='flex flex-col sm:flex-row items-start sm:items-center justify-between border-white rounded bg-gray-400 p-4 my-4 gap-2'>
+              <span className='text-white text-base sm:text-xl'>{task.title}</span>
+              <button onClick={()=>handleDeleteTask(task._id)} className='p-2 bg-red-700 text-white rounded text-sm sm:text-base cursor-pointer'>DELETE</button>
             </li>
               ))
             :
